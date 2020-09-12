@@ -1,0 +1,21 @@
+package com.litoos11.micro.app.usuarios.services;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.litoos11.micro.app.usuarios.repositorys.AlumnoRepository;
+import com.litoos11.micro.commons.alumnos.entitys.Alumno;
+import com.litoos11.micro.commons.services.CommonServiceImpl;
+
+@Service("alumnoService")
+public class AlumnoServiceImpl extends CommonServiceImpl<Alumno, AlumnoRepository> implements AlumnoService {
+
+	@Override
+	@Transactional(readOnly = true)
+	public List<Alumno> findByNombreOrApellido(String search) {
+		return repository.findByNombreOrApellido(search);
+	}
+	
+}

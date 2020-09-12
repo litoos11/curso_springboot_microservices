@@ -1,0 +1,11 @@
+package com.litoos11.micro.app.usuarios.services;
+
+import java.util.List;
+
+import com.litoos11.micro.commons.alumnos.entitys.Alumno;
+import com.litoos11.micro.commons.services.CommonService;
+
+public interface AlumnoService extends CommonService<Alumno>{
+
+	public List<Alumno> findByNombreOrApellido(String search);
+}
