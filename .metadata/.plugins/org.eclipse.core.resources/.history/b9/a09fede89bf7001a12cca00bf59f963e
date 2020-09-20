@@ -1,0 +1,5 @@
+package com.litoos11.micro.cursos.clients;
+
+public interface AlumnoFeignClient {
+
+}

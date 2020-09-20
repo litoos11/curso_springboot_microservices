@@ -11,6 +11,6 @@ import com.litoos11.micro.commons.alumnos.entitys.Alumno;
 @Repository("alumnoRepository")
 public interface AlumnoRepository extends PagingAndSortingRepository<Alumno, Long>{
 	
-	@Query("select a from Alumno a where a.nombre like %?1% or a.apellido like %?1%")
+	@Query("select a from Alumno a where upper(a.nombre) like upper(concat('%', ?1, '%')) or upper(a.apellido) like upper(concat('%', ?1, '%'))")
 	public List<Alumno> findByNombreOrApellido(String search);
 }

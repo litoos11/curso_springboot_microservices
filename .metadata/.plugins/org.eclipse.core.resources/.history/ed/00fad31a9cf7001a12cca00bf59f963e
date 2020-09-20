@@ -1,0 +1,11 @@
+package com.litoos11.micro.cursos.clients;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@FeignClient(name = "micro-usuarios")
+public interface AlumnoFeignClient {
+
+	@GetMapping("alumnos-por-curso")
+	obtenerAlumnosPorCurso(Iterable<Long> ids);
+}

@@ -1,6 +1,7 @@
 package com.litoos11.micro.app.usuarios.controllers;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Optional;
 
 import javax.validation.Valid;
@@ -27,7 +28,12 @@ import com.litoos11.micro.commons.controllers.CommonController;
 @RestController
 public class AlumnoController extends CommonController<Alumno, AlumnoService> {
 
-	@GetMapping("/uploads/img/{id}")
+	@GetMapping("/alumnos-por-curso")
+	public ResponseEntity<?> obtenerAlumnosPorCurso(@RequestParam List<Long> ids){
+		return ResponseEntity.ok(service.findAllById(ids));
+	}
+	
+	@GetMapping("/subir/img/{id}")
 	public ResponseEntity<?> viewPhoto(@PathVariable Long id) {
 
 		Optional<Alumno> optionalAlumno = service.findById(id);

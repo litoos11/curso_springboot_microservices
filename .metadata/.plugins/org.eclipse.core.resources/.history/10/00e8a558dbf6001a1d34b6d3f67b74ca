@@ -1,0 +1,5 @@
+package com.litoos11.micro.cursos.entitys;
+
+public class CursoAlumno {
+
+}

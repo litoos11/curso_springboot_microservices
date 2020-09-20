@@ -1,0 +1,8 @@
+package com.litoos11.micro.app.usuarios.client;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+@FeignClient(name = "micro-cursos")
+public interface CursoFeignClient {
+
+}

@@ -8,4 +8,8 @@ import com.litoos11.micro.commons.services.CommonService;
 public interface AlumnoService extends CommonService<Alumno>{
 
 	public List<Alumno> findByNombreOrApellido(String search);
+	
+	public Iterable<Alumno> findAllById(Iterable<Long> ids);
+	
+	public void deleteCursoAlumnoById(Long id);
 }

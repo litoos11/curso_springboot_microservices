@@ -1,0 +1,6 @@
+package com.litoos11.micro.app.usuarios.client;
+
+
+public interface CursoFeignClient {
+
+}
